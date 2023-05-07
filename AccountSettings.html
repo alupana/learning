@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport">
+  <link href="bootstrap.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>title</title>
+</head>
+
+<body style="background-color:rgb(235, 230, 230); " class="small ">
+  <div class="container-fluid m-3">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item  "><span class="nav-link disabled">Account Settings</span></li>
+        <li class="breadcrumb-item"><span>Notifications</span></li>
+      </ol>
+    </nav>
+  </div>
+  <div class="container-fluid mt-4 px-5 ">
+    <ul class="nav nav-pills ">
+      <li class="nav-item px-2">
+        <a class="nav-link p-1" href="#">Account</a>
+      </li>
+      <li class="nav-item-sm ">
+        <a class="nav-link active p-1" href="#">Notifications</a>
+      </li>
+      <li class="nav-item px-2">
+        <a class="nav-link p-1" href="#">Connections</a>
+      </li>
+    </ul>
+  </div>
+  <div class="container-fluid m-3 rounded" style="background-color:rgb(255, 250, 250);">
+    <h6 class="py-3">
+      Recent Devices
+    </h6>
+    <span>
+      <p>We need permission form your browser to show Notifications.<b>Request Permission</b></p>
+    </span>
+    <table class="table table-borderless table table-striped border-bottom">
+      <thead>
+        <tr class="small">
+          <th>TYPE</th>
+          <th>EMAIL</th>
+          <th>BROWSER</th>
+          <th>APP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>New for you</td>
+          <td><input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked></td>
+          <td><input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked></td>
+          <td><input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked></td>
+        </tr>
+        <tr>
+          <td>Account activity</td>
+          <td><input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked></td>
+          <td><input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked></td>
+          <td><input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked></td>
+        </tr>
+        <tr>
+          <td>A new browser used to sign in </td>
+          <td><input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked></td>
+          <td><input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked></td>
+          <td><input class="form-check-input" type="checkbox" id="check1" name="option1" value="something"></td>
+        </tr>
+        <tr>
+          <td>A new device is linked </td>
+          <td><input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked></td>
+          <td><input class="form-check-input" type="checkbox" id="check1" name="option1" value="something"></td>
+          <td><input class="form-check-input" type="checkbox" id="check1" name="option1" value="something"></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row">
+      <div class="col p-2">
+        <label for="selNotification" class="">
+          When should we send you notification?
+        </label>
+        <select id="selNotification" class="form-select form-select-sm">
+          <option> Only when I'm online</option>
+        </select>
+        
+      </div>
+      <div class="col p-2"></div>
+    </div>
+    <div class="p-2 pb-3 ">
+      <input type="button" value="Save changes" class="btn btn-primary btn-sm">
+      <input type="button" value="Discard" class="btn btn-outline-secondary btn-sm">
+    </div>
+  </div>
+</body>
+
+</html>
