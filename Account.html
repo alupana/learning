@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"  rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Account</title>
+</head>
+<body style="background-color:rgb(235, 230, 230); " class="small ">
+    <div class="container-fluid m-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item  "><span class="nav-link disabled">Account Settings</span></li>
+            <li class="breadcrumb-item"><span>Account</span></li>
+          </ol>
+        </nav>
+      </div>
+      <div class="container-fluid mt-4 px-5 ">
+        <ul class="nav nav-pills ">
+          <li class="nav-item px-2">
+            <a class="nav-link active p-1" href="Account.html">Account</a>
+          </li>
+          <li class="nav-item-sm ">
+            <a class="nav-link  p-1" href="AccountSettings.html">Notifications</a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link p-1" href="#">Connections</a>
+          </li>
+        </ul>
+      </div>
+      <div class="container-fluid m-3 rounded border-bottom" style="background-color:rgb(255, 250, 250);">
+        <h6 class="py-3 m-3">
+            Profile Details
+          </h6>
+            <div class="d-flex align-items-start border-bottom pb-3">
+              <img style="width:100px" class="card-img-top rounded-3 " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlaLWpwXOsif7N4Or8enmpRbbZ-lr0HQN50OiO20ML2g&usqp=CAU&ec=48600112" alt="Card image" style="width:80%">
+              <div class="container-fluid small py-2">
+              <span  type="button" value="Upload new photo" class="btn btn-primary ">upload new photo</span>
+              <input type="button" value="Reset" class="btn btn-outline-secondary mx-2" /><br/>
+              <span class="my-3 ">Allowed JPG, GIF or PNG. Max size of 800K</span>
+            </div>
+            </div>
+          <div class="row py-1 small ">
+            <div class="col py-4 ">
+                <label class="pb-2 " for="FIRST NAME">FIRST NAME</label>
+                <input type="text" class="form-control " id="FIRST NAME" placeholder="Enter Fist Name" name="FIRST NAME">
+                <label class="pb-2 pt-3" for="E-MAIL">E-MAIL</label>
+                <input type="text" class="form-control" id="E-MAIL" placeholder="Enter email" name="E-MAIL">
+                <label class="pb-2 pt-3" for="PHONE NUMBER">PHONE NUMBER</label>
+                <input type="text" class="form-control" id="PHONE NUMBER" placeholder="Enter phone number" name="PHONE NUMBER">
+                <label class="pb-2 pt-3" for="STATE">STATE</label>
+                <input type="text" class="form-control" id="STATE" placeholder="Enter state" name="STATE">
+                <label class="pb-2 pt-3" for="selCountry">
+                    COUNTRY
+                </label>
+                <select id="selCountry" placeholder="COUNTRY" class="form-select form-select">
+                    <option>Select</option>
+                </select>
+                <label class="pb-2 pt-3" for="selTimeZone">
+                    TIMEZONE
+                </label>
+                <select id="sselTimeZone" class="form-select form-select">
+                    <option> Select Timezone</option>
+                </select>
+                <div class="mt-4">
+                <button type="submit" class="btn btn-primary ">Save changes</button>
+                <button type="submit" class="btn btn border mx-2 px-4" >Cancel</button>
+                </div>
+            </div>
+            <div class="col py-4">
+                <label class="pb-2 " for="LAST NAME">LAST NAME</label>
+                <input type="text" class="form-control" id="LAST NAME" placeholder="Enter Last Name" name="LAST NAME">
+                <label class="pb-2 pt-3" for="ORGANIZATION">ORGANIZATION</label>
+                <input type="text" class="form-control" id="ORGANIZATION" placeholder="Enter Organization" name="ORGANIZATION">
+                <label class="pb-2 pt-3" for="ADDRESS">ADDRESS</label>
+                <input type="text" class="form-control" id="ADDRESS" placeholder="Enter Address" name="ADDRESS">
+                <label class="pb-2 pt-3" for="ZIP CODEL">ZIP CODE</label>
+                <input type="text" class="form-control" id="ZIP CODE" placeholder="Enter Zip Code" name="ZIP CODE">
+                <label class="pb-2 pt-3" for="selLanguage">
+                    LANGUAGE
+                </label>
+                <select id="selLanguage" placeholder="LANGUAGE" class="form-select form-select">
+                    <option>Select Language</option>
+                </select>
+                <label class="pb-2 pt-3" for="selCurrency">
+                    CURRENCY
+                </label>
+                <select id="selCurrency" class="form-select form-select">
+                    <option> Select Currency</option>
+                </select>
+            </div>
+          </div>
+      </div>
+      
+      <div class="container-fluid m-3 rounded border-bottom" style="background-color:rgb(255, 250, 250);">
+        <h6 class=" mt-3 pt-4 pb-3">
+            Delete Account
+          </h6>
+          <div class="container-fluid  rounded py-3 " style="height:70px;background-color: rgb(235, 174, 99);">
+                <b >Are you sure you want to delete your account?</b><br>
+                Once you delete your account, there is no going back. Please be certin. 
+          </div>
+          <div class="form-check container-fluid mt-3">
+            <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" >
+            <label class="form-check-label" for="check1">I confirm my account deactivation</label><br>
+            <button type="submit" class="btn btn-danger btn-primary px-4 my-3" >Deactivate Account</button>
+          </div>
+      </div>
+</body>
+</html>

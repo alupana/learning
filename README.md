@@ -1,2 +1,0 @@
-# learning
-Fullstack skils learning

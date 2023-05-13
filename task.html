@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"  rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container text "><br><br>
+  <h2 class="container-fluid text-center fs-1">ORDER DETAILS :</h2><br><br>
+  <form class="form-horizontal fs-4" action="#" >
+    <div class="form-group ">
+      <label class="control-label col-sm-2" for="orderId">OrderId: </label>
+      <div class="col-sm-10 ">
+        <input type="text" class="form-control fs-5" id="orderId" placeholder="Enter orderId" name="orderId">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="orderDiscription">OrderDiscription: </label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control fs-5" id="orderDiscription" placeholder="Enter orderDiscription" name="orderDiscription">
+      </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="orderAdders">OrderAdders: </label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control fs-5" id="orderAdders" placeholder="Enter orderAdders" name="orderAdders">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="price">Price: </label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control fs-5" id="price" placeholder="Enter price" name="price">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="orderPlaced">OrderPlaced: </label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control fs-5" id="orderPlaced" placeholder="Enter orderPlaced" name="orderPlaced">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="shipTo">ShipTo: </label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control fs-5" id="shipTo" placeholder="Enter shipTo" name="shipTo">
+        </div>
+      </div>
+      <div class="form-group ">
+        <label class="control-label col-sm-2" for="contactNumber">ContactNumber: </label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control fs-5" id="contactNumber" placeholder="Enter contactNumber" name="contactNumber">
+        </div>
+      </div>
+      <div class="form-group">
+      <label class="control-label col-sm-2" for="Status">Status: </label>
+        <div class="col-sm-10">
+            <select id="Status" placeholder="Enter Status" class="form-select form-select fs-5">
+                <option class="disabled">Status of the product</option>
+                <option>Dispatch</option>
+                <option>Out for delivery</option>
+                <option>Delivered</option>
+            </select>
+        </div>
+      </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary border fs-3" onclick="collectData(); return false;">Submit</button>
+      </div><br><br>
+      <div class="form-group ">
+        <label class="control-label col-sm-2" for="">arrayLength: </label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control fs-5" id="orders" placeholder="" name="orders">
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="container-fluid" id="cardsDiv"></div>
+  
+  <script type="text/javascript">
+    debugger;
+    var orders=[];
+
+    function collectData(){
+      //Collect the form data
+      
+      var orderId = document.getElementById("orderId").value
+      var orderDescription = document.getElementById("orderDiscription").value
+      var orderAddress = document.getElementById("orderAdders").value
+      var price = document.getElementById("price").value
+      var orderPlaced = document.getElementById("orderPlaced").value
+      var shipTo = document.getElementById("shipTo").value
+      var contactNumber = document.getElementById("contactNumber").value
+      var status = document.getElementById("Status").value
+
+      var jsonObject =
+      {
+        "orderId":orderId,
+        "orderDescription":orderDescription,
+        "orderAdders":orderAddress,
+        "price":price,
+        "orderPlaced":orderPlaced,
+        "shipTo":shipTo,
+        "contactNumber":contactNumber,
+        "status":status
+      }
+      
+      // debugger;
+      //const orders = [...orders]; //spread operator(...)
+
+      orders.push(jsonObject);
+      document.getElementById("orders").value=orders.length;
+
+      let ordersHTML = `<div class="container">`;
+      let i=0;  
+      for(i=0; i< orders.length; i++){
+        let cardHTML = `<div class="card">
+          <div class="card-header">${orders[i].orderId}</div>
+          <div class="card-body">
+              ${orders[i].orderDescription}<br />
+              ${orders[i].orderAddress}<br />
+              ${orders[i].price} <br />
+              ${orders[i].shipTo} <br />
+              ${orders[i].contactNumber} <br />
+          </div>
+          <div class="card-footer">${orders[i].status}</div>
+        </div>`;
+
+        ordersHTML += cardHTML;
+      }
+      ordersHTML += `</div>`
+      document.getElementById('cardsDiv').innerHTML = ordersHTML;
+    }
+    
+  </script>
+</body>
+</html>
