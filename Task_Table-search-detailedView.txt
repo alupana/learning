@@ -1,0 +1,22 @@
+
+1. Display array items in a table format
+    Choose cricket JSON
+        tournamentLabel
+        scheduleEntry.matchDate
+        scheduleEntry.matchStatus.text
+        scheduleEntry.team1.team.fullName
+        scheduleEntry.team2.team.fullName
+        scheduleEntry.matchType
+2. Enable search on each table row header
+        Enable search on the above display fields
+
+3. Display the row details in a detailed view
+        scheduleEntry.venue.fullName
+        scheduleEntry.venue.city
+        scheduleEntry.venue.country
+        scheduleEntry.team1.team.innings.count
+        scheduleEntry.team1.team.innings[0].runs
+        scheduleEntry.team1.team.innings[0].wickets
+        scheduleEntry.team1.team.innings[0].allOut
+        scheduleEntry.team2.team.innings.count
+
