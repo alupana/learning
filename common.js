@@ -1,3 +1,17 @@
+let tableHeaderHTML = `<table class="table table-hover table-bordered">
+      <th>Match Name<br />
+        <input type="text" id="txtMatchName" onblur="filterMatchName(event)" /></th>
+      <th>Match date<br />
+        <input type="text" id="txtMatchDate" /></th>
+      <th>Status<br />
+        <input type="text" id="txtMatchStatus"  onblur="filterMatchStatus(event)" /></th>
+      <th>Team 1<br />
+        <input type="text" id="txtTeam1Name" /></th>
+      <th>Team 2<br />
+        <input type="text" id="txtTeam2Name" /></th>
+        <th>Match Type<br />
+        <input type="text" id="txtMatchType" /></th>
+      `;
 
 function filterMatchName(event){
     debugger;
@@ -25,30 +39,19 @@ function checkMatchStatus(arrayItem, searchText){
     return arrayItem.scheduleEntry.matchStatus.text.includes(searchText);
 }
 
-function displayAdditionalDetails(arrayItem){
+function displayAdditionalDetails(arrayItemIndex){
     document.getElementById('rowDetails').innerHTML = `
-        <p>Venue: ${filteredArray[arrayItem].scheduleEntry.venue.fullName}</p>
-        <p>Venue City: ${filteredArray[arrayItem].scheduleEntry.venue.city}</p>
-        <p>Venue Country: ${filteredArray[arrayItem].scheduleEntry.venue.country}</p>
+        <p>Venue: ${filteredArray[arrayItemIndex].scheduleEntry.venue.fullName}</p>
+        <p>Venue City: ${filteredArray[arrayItemIndex].scheduleEntry.venue.city}</p>
+        <p>Venue Country: ${filteredArray[arrayItemIndex].scheduleEntry.venue.country}</p>
     `;
     
 }
+
+
 function renderData(arrayToProcess){
     //Collect the form data
-    let cricketScoresHTML = `<table class="table table-hover table-bordered">
-      <th>Match Name<br />
-        <input type="text" id="txtMatchName" onblur="filterMatchName(event)" /></th>
-      <th>Match date<br />
-        <input type="text" id="txtMatchDate" /></th>
-      <th>Status<br />
-        <input type="text" id="txtMatchStatus"  onblur="filterMatchStatus(event)" /></th>
-      <th>Team 1<br />
-        <input type="text" id="txtTeam1Name" /></th>
-      <th>Team 2<br />
-        <input type="text" id="txtTeam2Name" /></th>
-        <th>Match Type<br />
-        <input type="text" id="txtMatchType" /></th>
-      `;
+    var tableRowsHTML = '';
     let i=0;  
     for(i=0; i< arrayToProcess.length; i++){
       try{
@@ -61,14 +64,14 @@ function renderData(arrayToProcess){
         <td class="text-nowrap">${arrayToProcess[i].scheduleEntry.matchType}</td>       
       </tr>`;
 
-      cricketScoresHTML += rowHTML;
+      tableRowsHTML += rowHTML;
       document.getElementById('rowsCounts').innerHTML = `Rows processed: ${i+1}`
       }catch(ex){
         console.log(`exception in row ${i.toString()} \n ${ex.toString()}`);
       }
       
     }
-    cricketScoresHTML += `</table>`
+    cricketScoresHTML =  `${tableHeaderHTML} ${tableRowsHTML} </table>`;
     document.getElementById('cricketInfoDiv').innerHTML = cricketScoresHTML;
     
   }
